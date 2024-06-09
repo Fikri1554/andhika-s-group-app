@@ -1961,26 +1961,48 @@ class Purchasing extends CI_Controller {
 
 			if ($grandTotal > 100000000) {
 				if ($dataReq[0]->qrcode_approve5 != "") {
-					$qrCodes[] = array(
-						"qrCode" => base_url('/imgQrCode') . "/" . $dataReq[0]->qrcode_approve5,
-						"name" => "Marita",
-						"date" => $this->convertReturnNameWithTime($dataReq[0]->date_approve5)
-					);
+					$dataOut['qrCodes'][] = [
+						'name' => 'Marita',
+						'qrCode' => $dataReq[0]->qrcode_approve5,
+						'date' => $this->convertReturnNameWithTime($dataReq[0]->date_approve5)
+					];
+					$trTTDnyaMarita .= "<td style=\"width:150px;\" align=\"center\">";
+					$trTTDnyaMarita .= "<img src=\"" . base_url('/imgQrCode') . "/" . $dataReq[0]->qrcode_approve5 . "\" style=\"width:15%;\">";
+					$trTTDnyaMarita .= "</td>";
+					$trTTDnya2Marita .= "<td style=\"width:150px;border-bottom:1px solid black;\" align=\"center\"><b>Marita</b></td>";
+					$trTTDnya3Marita .= "<td style=\"width:150px;\" align=\"center\">";
+					$trTTDnya3Marita .= "<i style=\"font-size:10px;\">" . $this->convertReturnNameWithTime($dataReq[0]->date_approve5) . "</i>";
+					$trTTDnya3Marita .= "</td>";
 				}
+				// QR code untuk Eddy Sukmono
 				if ($dataReq[0]->department == "ENGINE" && $dataReq[0]->qrcode_approve4 != "") {
-					$qrCodes[] = array(
-						"qrCode" => base_url('/imgQrCode') . "/" . $dataReq[0]->qrcode_approve4,
-						"name" => "Eddy Sukmono",
-						"date" => $this->convertReturnNameWithTime($dataReq[0]->date_approve4)
-					);
+					$dataOut['qrCodes'][] = [
+						'name' => 'Eddy Sukmono',
+						'qrCode' => $dataReq[0]->qrcode_approve4,
+						'date' => $this->convertReturnNameWithTime($dataReq[0]->date_approve4)
+					];
+					$trTTDnyaEddy .= "<td style=\"width:150px;\" align=\"center\">";
+					$trTTDnyaEddy .= "<img src=\"" . base_url('/imgQrCode') . "/" . $dataReq[0]->qrcode_approve4 . "\" style=\"width:15%;\">";
+					$trTTDnyaEddy .= "</td>";
+					$trTTDnya2Eddy .= "<td style=\"width:150px;border-bottom:1px solid black;\" align=\"center\"><b>Eddy Sukmono</b></td>";
+					$trTTDnya3Eddy .= "<td style=\"width:150px;\" align=\"center\">";
+					$trTTDnya3Eddy .= "<i style=\"font-size:10px;\">" . $this->convertReturnNameWithTime($dataReq[0]->date_approve4) . "</i>";
+					$trTTDnya3Eddy .= "</td>";
 				}
 				if ($dataReq[0]->qrcode_approve2 != "") {
-					$qrCodes[] = array(
-						"qrCode" => base_url('/imgQrCode') . "/" . $dataReq[0]->qrcode_approve2,
-						"name" => "Pribadi Arijanto",
-						"date" => $this->convertReturnNameWithTime($dataReq[0]->date_approve2)
-					);
-				}
+					$dataOut['qrCodes'][] = [
+						'name' => 'Pribadi Arijanto',
+						'qrCode' => $dataReq[0]->qrcode_approve2,
+						'date' => $this->convertReturnNameWithTime($dataReq[0]->date_approve2)
+					];
+					$trTTDnya .= "<td style=\"width:150px;\" align=\"center\">";
+					$trTTDnya .= "<img src=\"" . base_url('/imgQrCode') . "/" . $dataReq[0]->qrcode_approve2 . "\" style=\"width:15%;\">";
+					$trTTDnya .= "</td>";
+					$trTTDnya2 .= "<td style=\"width:150px;border-bottom:1px solid black;\" align=\"center\"><b>Pribadi Arijanto</b></td>";
+					$trTTDnya3 .= "<td style=\"width:150px;\" align=\"center\">";
+					$trTTDnya3 .= "<i style=\"font-size:10px;\">" . $this->convertReturnNameWithTime($dataReq[0]->date_approve2) . "</i>";
+					$trTTDnya3 .= "</td>";
+				} 					
 			}
 
 			$dataOut ['qrCodes'] = $qrCodes;
