@@ -426,47 +426,6 @@
     }
 
 
-    function submitComplete(id) {
-        var idReq = id;
-        var remark = $("#txtCompleteModal").val();
-
-        if (remark == "") {
-            alert("Remark can't be blank..!!");
-            return false;
-        }
-
-        var cfm = confirm("Submit Complete Remark..??");
-        if (cfm) {
-            $("#idLoading").show();
-            $.post('<?php echo base_url("offered/submitComplete"); ?>/', {
-                    idReq: idReq,
-                    remark: remark
-                },
-                function(response) {
-                    $("#idLoading").hide();
-                    console.log(response);
-
-                    if (typeof response === "string") {
-                        response = JSON.parse(response);
-                    }
-                    if (response.success) {
-                        alert(response.message);
-                        $("#modalOfferDetail").modal('hide'); // Hide the modal on success
-                        $("#row-" + idReq).remove(); // Remove the row from the table
-                        $("#row-" + idReq + " .remark").text(remark); // Update remark in table
-                    } else {
-                        alert("Failed to submit: " + response.message);
-                    }
-                },
-                "json"
-            ).fail(function(jqXHR, textStatus, errorThrown) {
-                $("#idLoading").hide();
-                alert("Error: " + textStatus + ", " + errorThrown);
-            });
-        }
-    }
-
-
     function createQuotation(idReq) {
         $("#idLoading").show();
         $.post('<?php echo base_url("offered/getEdit"); ?>/', {
