@@ -1877,18 +1877,20 @@ class Purchasing extends CI_Controller {
 							$trTTDnya3 .= "<i style=\"font-size:10px;\">".$this->convertReturnNameWithTime($dataReq[0]->date_approve4)."</i>";
 						$trTTDnya3 .= "</td>";
 					}
-				}else{
-					if($dataReq[0]->qrcode_approve3 != "")
-					{				
-						$trTTDnya .= "<td style=\"width:150px;\" align=\"center\">";
-							$trTTDnya .= "<img src=\"".base_url('/imgQrCode')."/".$dataReq[0]->qrcode_approve3."\" style=\"width:15%;\">";	
-						$trTTDnya .= "</td>";
-						$trTTDnya2 .= "<td style=\"width:150px;border-bottom:1px solid black;\" align=\"center\"><b>Hari Joko Purnomo</b></td>";
-						$trTTDnya3 .= "<td style=\"width:150px;\" align=\"center\">";
-							$trTTDnya3 .= "<i style=\"font-size:10px;\">".$this->convertReturnNameWithTime($dataReq[0]->date_approve3)."</i>";
-						$trTTDnya3 .= "</td>";
-					}
 				}
+				// else
+				// {
+				// 	if($dataReq[0]->qrcode_approve3 != "")
+				// 	{				
+				// 		$trTTDnya .= "<td style=\"width:150px;\" align=\"center\">";
+				// 			$trTTDnya .= "<img src=\"".base_url('/imgQrCode')."/".$dataReq[0]->qrcode_approve3."\" style=\"width:15%;\">";	
+				// 		$trTTDnya .= "</td>";
+				// 		$trTTDnya2 .= "<td style=\"width:150px;border-bottom:1px solid black;\" align=\"center\"><b>Hari Joko Purnomo</b></td>";
+				// 		$trTTDnya3 .= "<td style=\"width:150px;\" align=\"center\">";
+				// 			$trTTDnya3 .= "<i style=\"font-size:10px;\">".$this->convertReturnNameWithTime($dataReq[0]->date_approve3)."</i>";
+				// 		$trTTDnya3 .= "</td>";
+				// 	}
+				// }
 				if($dataReq[0]->qrcode_approve2 != "")
 				{				
 					$trTTDnya .= "<td style=\"width:150px;\" align=\"center\">";
