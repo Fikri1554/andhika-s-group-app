@@ -425,7 +425,6 @@
         }
     }
 
-
     function createQuotation(idReq) {
         $("#idLoading").show();
         $.post('<?php echo base_url("offered/getEdit"); ?>/', {
