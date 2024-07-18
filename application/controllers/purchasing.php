@@ -80,7 +80,7 @@ class Purchasing extends CI_Controller {
 
 			if($val->create_purchasing == '0')
 			{
-				$btnAct = " <button onclick=\"checkPurchasing('".$val->id."','".$val->type_check1."');\" class=\"btn btn-primary btn-xs\" id=\"btnEdit\" type=\"button\"><i class=\"fa fa-check-square-o\"></i> Create Purchasing</button>";
+				$btnAct = " <button onclick=\"checkPurchasing('".$val->id."','".$val->type_check1."');\" class=\"btn btn-primary btn-sm\" id=\"btnEdit\" type=\"button\"><i class=\"fa fa-check-square-o\"></i> Create Purchasing</button>";
 			}
 			else if($val->create_purchasing == '1' AND $val->submit_purchasing == '0')
 			{
@@ -367,7 +367,7 @@ class Purchasing extends CI_Controller {
 	function viewListPurchase($idReq = "",$typeView = "")
 	{
 		$usrType = $this->session->userdata('userTypePurchase');
-		$dataOut = array();
+		$dataOut = array();-
 		$trNya = "";
 		$no = 1;
 
@@ -381,6 +381,9 @@ class Purchasing extends CI_Controller {
 			$ship = $value->ship_name."<br><i style=\"font-size:10px;\">(".$value->ship_company.")</i>";
 
 			$linkAction = "";
+			$linkActionEdit = "";
+
+			$linkActionEdit = "<button onclick=\"showEditPoNoModal('".$value->id."');\" class=\"btn btn-primary btn-xs btn-block\" id=\"btnEditPoNo\" type=\"button\"><i class=\"fa fa-edit\"></i> Edit PO</button>";
 
 			if($value->st_data == "0")
 			{
@@ -398,7 +401,6 @@ class Purchasing extends CI_Controller {
 					$linkAction = "<a href=\"".$laNya."\" class=\"btn btn-primary btn-xs btn-block\" target=\"_blank\"><i class=\"fa fa-check-square-o\"></i> View</a>";
 				}
 				
-
 				if($value->send_erp == "0")
 				{
 					if($typeView == "")
@@ -428,7 +430,7 @@ class Purchasing extends CI_Controller {
 			}
 
 			$trNya .= "<tr>";
-				$trNya .= "<td align=\"center\">".$no."</td>";
+				$trNya .= "<td align=\"center\">".$no.$linkActionEdit."</td>";
 				$trNya .= "<td align=\"center\">".$this->convertReturnName($value->date_request)."</td>";
 				$trNya .= "<td align=\"center\">".$value->po_no."</td>";
 				$trNya .= "<td align=\"center\">".$this->convertReturnName($value->po_date)."</td>";
@@ -451,6 +453,59 @@ class Purchasing extends CI_Controller {
 
 		$this->load->view("purchasing/daftarPurchase",$dataOut);
 	}
+	
+	function getPoDetailsAjax() {
+		$id = $this->input->post('id'); // Assuming you are using CodeIgniter's input library
+	
+		$this->db->select('order_company, ship_name, po_date, po_no');
+		$this->db->from('list_purchase');
+		$this->db->where('id', $id);
+		$query = $this->db->get();
+	
+		if ($query->num_rows() > 0) {
+			$row = $query->row_array();
+			header('Content-Type: application/json');
+			echo json_encode($row);
+		} else {
+			echo json_encode(array('error' => 'No PO details found'));
+		}
+	}
+	
+	function editPoNo() {
+		$id = $this->input->post('id');
+		$new_po_no = $this->input->post('po_no');
+	
+		
+		$this->load->database();
+	
+		
+		$this->db->select('po_no');
+		$this->db->from('list_purchase');
+		$this->db->where('id', $id);
+		$query = $this->db->get();
+		$row = $query->row();
+	
+		if (isset($row)) {
+			$old_po_no = $row->po_no;
+	
+			$data = array(
+				'po_no' => $new_po_no,
+				'po_no_old' => $old_po_no
+			);
+	
+			$this->db->where('id', $id);
+			$update = $this->db->update('list_purchase', $data);
+	
+			if ($update) {
+				echo 'success';
+			} else {
+				echo 'failure';
+			}
+		} else {
+			echo 'failure';
+		}
+	}
+	
 
 	function getDataToErpBargeCharge()
 	{

@@ -464,7 +464,7 @@ class ListRequest extends CI_Controller {
 				$trNya .= "<td align=\"center\" style=\"font-size:11px;\">" . $val->mark . "</td>";
 				$trNya .= "<td style=\"font-size:11px;\">
 								<input type=\"hidden\" name=\"txtIdReqDetail[]\" id=\"txtIdReqDetail\" value=\"" . $val->id . "\">
-								<input type=\"text\" style=\"text-align:center;\" class=\"form-control input-sm\" name=\"txtTtlApprove[]\" id=\"txtTtlApprove\" value=\"" . $val->approved_order . "\">
+								<input type=\"text\" style=\"text-align:center;\" class=\"form-control input-sm\" name=\"txtTtlApprove[]\" id=\"txtTtlApprove\" value=\"" . $val->request . "\">
 						</td>";
 				$trNya .= "<td align=\"center\">
 								<textarea name=\"txtRemark[]\" class=\"form-control input-sm\" id=\"txtRemark\">" . $val->approve_remark . "</textarea>

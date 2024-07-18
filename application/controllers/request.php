@@ -68,7 +68,7 @@ class Request extends CI_Controller {
 				$stMaster = "On Progress";
 				$btnAct = "";
 			}else{
-				$btnAct .= " <button onclick=\"editData('".$value->id."');\" class=\"btn btn-info btn-xs\" id=\"btnEdit\" type=\"button\"><i class=\"fa fa-edit\"></i> Edit</button>
+				$btnAct = "<button onclick=\"editData('".$value->id."');\" class=\"btn btn-info btn-xs\" id=\"btnEdit\" type=\"button\"><i class=\"fa fa-edit\"></i> Edit</button>
 							<button onclick=\"delData('".$value->id."')\" class=\"btn btn-danger btn-xs\" id=\"btnDel\" type=\"button\"><i class=\"fa fa-times-circle\"></i> Del</button>";
 			}
 			$cekDetail = $this->cekDetailReq($value->id);
@@ -76,35 +76,37 @@ class Request extends CI_Controller {
 			{
 				$btnDetail = "<button onclick=\"editDataDetail('".$value->id."');\" title=\"Edit Detail\" class=\"btn btn-warning btn-xs\" id=\"btnViewDetail\" type=\"button\" style=\"margin:5px;\"><i class=\"glyphicon glyphicon-edit\"></i></button>";
 				$btnDetail .= "<button onclick=\"modalUploadFile('".$value->id."');\" title=\"Upload File\" class=\"btn btn-success btn-xs\" id=\"btnViewDetail\" type=\"button\" style=\"margin:5px;\"><i class=\"glyphicon glyphicon-open\"></i></button>";
-			}else{
-				$btnDetail = "<button onclick=\"addDetail('".$value->id."');\" title=\"Add Detail\" class=\"btn btn-primary btn-xs\" id=\"btnAdd\" type=\"button\"><i class=\"glyphicon glyphicon-plus\" ></i></button>";
 			}
-			if($value->chief_check != "0" AND $value->master_check != '0')
+			else{
+				$btnDetail = "<button onclick=\"addDetail('".$value->id."');\" title=\"Add Detail\" class=\"btn btn-primary btn-xs\" id=\"btnAdd\" type=\"button\"><i class=\"glyphicon glyphicon-plus\" ></i></button>";
+				
+			}-
+			if($value->chief_check != "0" AND $value->master_check != '0' AND strtolower($usrType) == strtolower("administrator"))
 			{
 				$btnDetail = "";
+				if(strtolower($usrType) == strtolower("administrator"))
+				{
+					$btnDetail .= "<button onclick=\"editDataDetail('".$value->id."');\" title=\"Edit Detail\" class=\"btn btn-warning btn-xs\" id=\"btnViewDetail\" type=\"button\" style=\"margin:5px;\"><i class=\"glyphicon glyphicon-edit\"></i></button>";
+				}
 				$btnAct = " <button onclick=\"showModal('".$value->id."','viewData');\" class=\"btn btn-primary btn-xs\" id=\"btnView\" type=\"button\"><i class=\"fa fa-search\"></i> View</button>";
 				$btnAct .= "<a href=\"".base_url('request/exportDataReq')."/".$value->id."\" class=\"btn btn-success btn-xs\" target=\"_blank\" style=\"margin-left:10px;\"><i class=\"fa fa-download\"></i> Export</a>";
-			}else{
-				if($cekDetail == "ada")
-				{
-					if($value->chief_check == "0" AND (strtolower($usrJbtn) == strtolower("C/E") || strtolower($usrJbtn) == strtolower("C/O") || strtolower($usrType) == strtolower("administrator")))
-					{
-						if($value->department == "DECK" AND (strtolower($usrJbtn) == strtolower("C/O") || strtolower($usrType) == strtolower("administrator")))
-						{
+			}
+			else {
+				if ($cekDetail == "ada") {
+					if ($value->chief_check == "0" AND (strtolower($usrJbtn) == strtolower("C/E") || strtolower($usrJbtn) == strtolower("C/O") || strtolower($usrType) == strtolower("administrator"))) {
+						if ($value->department == "DECK" AND (strtolower($usrJbtn) == strtolower("C/O") || strtolower($usrType) == strtolower("administrator"))) {
 							$btnAct .= " <button onclick=\"showModal('".$value->id."','','chief');\" title=\"Approve Chief\" class=\"btn btn-primary btn-xs\" id=\"btnApproveCo\" type=\"button\"><i class=\"fa fa-hand-o-right\"></i> C/O</button>";
 						}
-						if($value->department == "ENGINE" AND (strtolower($usrJbtn) == strtolower("C/E") || strtolower($usrType) == strtolower("administrator")))
-						{
+						if ($value->department == "ENGINE" AND (strtolower($usrJbtn) == strtolower("C/E") || strtolower($usrType) == strtolower("administrator"))) {
 							$btnAct .= " <button onclick=\"showModal('".$value->id."','','chief');\" title=\"Approve Chief\" class=\"btn btn-primary btn-xs\" id=\"btnApproveCe\" type=\"button\"><i class=\"fa fa-hand-o-right\"></i> C/E</button>";
 						}
-						
 					}
-					if(($value->master_check == "0" AND (strtolower($usrJbtn) == strtolower("MASTER") AND $value->chief_check == "1") || strtolower($usrType) == strtolower("administrator")))
-					{
+					if (($value->master_check == "0" AND (strtolower($usrJbtn) == strtolower("MASTER") AND $value->chief_check == "1") || strtolower($usrType) == strtolower("administrator"))) {
 						$btnAct .= " <button onclick=\"showModal('".$value->id."','','master');\" title=\"Approve Master\" class=\"btn btn-primary btn-xs\" id=\"btnApproveMaster\" type=\"button\"><i class=\"fa fa-hand-o-right\"></i> Master</button>";
 					}
 				}
 			}
+			
 
 			if($value->st_data == '1')
 			{
@@ -682,113 +684,140 @@ class Request extends CI_Controller {
 		{
 			$dataOut = $this->mpurchasing->getData("*","request","id = '".$id."'");
 		}
-		else if($typeEdit == "editReqDetail")
-		{
-			$valDetail = $this->mpurchasing->getData("*","request_detail","id_request = '".$id."'");
-			$valField = $this->addFieldEditDetail($valDetail);
+		else if ($typeEdit == "editReqDetail") {
+			$valDetail = $this->mpurchasing->getData("*", "request_detail", "id_request = '".$id."'");
+			$chiefCheckResult = $this->mpurchasing->getData("chief_check", "request", "id = '".$id."'");
+			$masterCheckResult = $this->mpurchasing->getData("master_check", "request", "id = '".$id."'");
+			
+			// Extract the check values from the result arrays
+			$chiefCheck = $chiefCheckResult[0]->chief_check;
+			$masterCheck = $masterCheckResult[0]->master_check;
+			
+			$valField = $this->addFieldEditDetail($valDetail, $chiefCheck, $masterCheck);
 			$dataOut['divNya'] = $valField['divNya'];
 			$dataOut['idField'] = $valField['idField'];
 			$dataOut['idReq'] = $id;
 		}
+		
 
 		print json_encode($dataOut);
 	}
 
-	function addFieldEditDetail($valDetail)
-	{
+	function addFieldEditDetail($valDetail, $chiefCheck, $masterCheck) {
 		$dataOut = array();
 		$idField = 1;
 		$divNya = "";
 		$idRemove = "";
-		for ($lan=0; $lan < count($valDetail) ; $lan++)
-		{
-			if($valDetail[$lan]->mark == "A"){ $slcA = "selected = 'selected'"; }else{ $slcA = ""; }
-			if($valDetail[$lan]->mark == "B"){ $slcB = "selected = 'selected'"; }else{ $slcB = ""; }
-			if($valDetail[$lan]->mark == "C"){ $slcC = "selected = 'selected'"; }else{ $slcC = ""; }
-			if($valDetail[$lan]->mark == "D"){ $slcD = "selected = 'selected'"; }else{ $slcD = ""; }
-
-			if($lan == 0)
-			{
-				$btnActDet = "<button class=\"btn btn-primary btn-block btn-sm\" title=\"Add\" id=\"btnAddField\" onclick=\"addRowDetail();\" type=\"button\"><i class=\"glyphicon glyphicon-plus\"></i></button>";
-				$idRemove = "idRemoveAdd";
-				$lblHeadDetail = "<legend><label id=\"lblFormDetail\"> Edit Data Detail</label></legend>";
-			}else{
-				$btnActDet = "<button class=\"btn btn-danger btn-block btn-sm\" title=\"Remove\" id=\"btnRmvField\" onclick=\"removeDetail('".$idField."','".$valDetail[$lan]->id."');\" type=\"button\"><i class=\"glyphicon glyphicon-minus\"></i></button>";
-				$idRemove = "idRemove_".$idField."";
-				$idField++;
-				$lblHeadDetail = "";
+	
+		for ($lan = 0; $lan < count($valDetail); $lan++) {
+			// Determine disabled attribute based on chief and master checks
+			$disabledExceptUnitAndRequest = "";
+			if ($chiefCheck == 1 && $masterCheck == 1) {
+				$disabledExceptUnitAndRequest = "disabled";
 			}
-			$divNya .= "<div class=\"row\" id=\"".$idRemove."\">";
-			$divNya .= "<input type=\"hidden\" name=\"txtIdEdit[]\" id=\"txtIdEdit\" value=\"".$valDetail[$lan]->id."\">";
-			$divNya .= "<div class=\"col-md-12\">";
-				$divNya .= $lblHeadDetail;
-				$divNya .= "<div class=\"col-md-1 col-xs-12\">";					
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"txtCodePartNo\"><u>Part No:</u></label>";
-						$divNya .= "<input placeholder=\"Code / Part No\" type=\"text\" class=\"form-control input-sm\" id=\"txtCodePartNo\" name=\"txtCodePartNo[]\" value=\"".$valDetail[$lan]->code_no."\">";
-					$divNya .= "</div>";
-				$divNya .= "</div>";
-				$divNya .= "<div class=\"col-md-2 col-xs-12\">";
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"txtNameArticle\"><u>Name of Article:</u></label>";
-						$divNya .= "<input placeholder=\"Name of Article\" type=\"text\" class=\"form-control input-sm\" id=\"txtNameArticle\" name=\"txtNameArticle[]\" value=\"".$valDetail[$lan]->article_name."\">";
-					$divNya .= "</div>";
-				$divNya .= "</div>";
-				$divNya .= "<div class=\"col-md-1 col-xs-12\">";
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"txtUnit\"><u>Unit:</u></label>";
-						$divNya .= "<input value=\"".$valDetail[$lan]->unit."\" type=\"text\" onkeypress=\"javascript:return isNumber(event)\" class=\"form-control input-sm\" id=\"txtUnit\" name=\"txtUnit[]\">";
-					$divNya .= "</div>";
-				$divNya .= "</div>";
-				$divNya .= "<div class=\"col-md-1 col-xs-12\">";
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"txtWorkOnBoard\"><u>Working:</u></label>";
-						$divNya .= "<input value=\"".$valDetail[$lan]->working_on_board."\" type=\"text\" onkeypress=\"javascript:return isNumber(event)\" class=\"form-control input-sm\" id=\"txtWorkOnBoard\" name=\"txtWorkOnBoard[]\">";
-					$divNya .= "</div>";
-				$divNya .= "</div>";
-				$divNya .= "<div class=\"col-md-1 col-xs-12\">";
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"txtStockOnBoard\"><u>Stock:</u></label>";
-						$divNya .= "<input value=\"".$valDetail[$lan]->stocking_on_board."\" type=\"text\" onkeypress=\"javascript:return isNumber(event)\" class=\"form-control input-sm\" id=\"txtStockOnBoard\" name=\"txtStockOnBoard[]\">";
-					$divNya .= "</div>";
-				$divNya .= "</div>";
-				$divNya .= "<div class=\"col-md-1 col-xs-12\">";
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"txtTotalReq\"><u>Request:</u></label>";
-						$divNya .= "<input value=\"".$valDetail[$lan]->request."\" type=\"text\" onkeypress=\"javascript:return isNumber(event)\" class=\"form-control input-sm\" id=\"txtTotalReq\" name=\"txtTotalReq[]\">";
-					$divNya .= "</div>";
-				$divNya .= "</div>";
-				$divNya .= "<div class=\"col-md-2 col-xs-12\">";
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"slcMarkDetail\"><u>Mark Reference :</u></label>";
-						$divNya .= "<select name=\"slcMarkDetail[]\" id=\"slcMarkDetail\" class=\"form-control input-sm\">";
-							$divNya .= "<option value=\"\">- Select -</option>";
-							$divNya .= "<option value=\"A\" ".$slcA.">TO BE REPLACE URGENTLY</option>";
-							$divNya .= "<option value=\"B\" ".$slcB.">BETTER TO BE REPLACE</option>";
-							$divNya .= "<option value=\"C\" ".$slcC.">STOCK FOR NEXT O/HAUL</option>";
-							$divNya .= "<option value=\"D\" ".$slcD.">STOCK FOR EMERGENCY</option>";
-						$divNya .= "</select>";
-					$divNya .= "</div>";
-				$divNya .= "</div>";
-				$divNya .= "<div class=\"col-md-2 col-xs-12\">";
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"txtRemark\"><u>Remark:</u></label>";
-						$divNya .= "<textarea name=\"txtRemark[]\" class=\"form-control input-sm\" id=\"txtRemark\">".$valDetail[$lan]->request_remark."</textarea>";
-					$divNya .= "</div>";
-				$divNya .= "</div>";
-				$divNya .= "<div class=\"col-md-1 col-xs-12\">";
-					$divNya .= "<div class=\"form-group\">";
-						$divNya .= "<label for=\"\" style=\"font-weight: bold;\">&nbsp</label>";
-						$divNya .= $btnActDet;
-					$divNya .= "</div>";
-				$divNya .= "</div>";
+	
+			// Build HTML for each detail row
+			$divNya .= "<div class='row' id='idRemove_$idField'>";
+			$divNya .= "<input type='hidden' name='txtIdEdit[]' value='".$valDetail[$lan]->id."'>";
+			$divNya .= "<div class='col-md-12'>";
+			$divNya .= "<legend><label id='lblFormDetail'> Edit Data Detail</label></legend>";
+	
+			// Part No:
+			$divNya .= "<div class='col-md-1 col-xs-12'>";
+			$divNya .= "<div class='form-group'>";
+			$divNya .= "<label for='txtCodePartNo'><u>Part No:</u></label>";
+			$divNya .= "<input placeholder='Code / Part No' type='text' class='form-control input-sm' id='txtCodePartNo' name='txtCodePartNo[]' value='".$valDetail[$lan]->code_no."' " . ($disabledExceptUnitAndRequest ? "disabled" : "") . ">";
 			$divNya .= "</div>";
 			$divNya .= "</div>";
+	
+			// Name of Article:
+			$divNya .= "<div class='col-md-2 col-xs-12'>";
+			$divNya .= "<div class='form-group'>";
+			$divNya .= "<label for='txtNameArticle'><u>Name of Article:</u></label>";
+			$divNya .= "<input placeholder='Name of Article' type='text' class='form-control input-sm' id='txtNameArticle' name='txtNameArticle[]' value='".$valDetail[$lan]->article_name."' " . ($disabledExceptUnitAndRequest ? "disabled" : "") . ">";
+			$divNya .= "</div>";
+			$divNya .= "</div>";
+
+			 // Unit:
+			 $divNya .= "<div class='col-md-1 col-xs-12'>";
+			 $divNya .= "<div class='form-group'>";
+			 $divNya .= "<label for='txtUnit'><u>Unit:</u></label>";
+			 $divNya .= "<input value='".$valDetail[$lan]->unit."' type='text' onkeypress='javascript:return isNumber(event)' class='form-control input-sm' id='txtUnit' name='txtUnit[]'>";
+			 $divNya .= "</div>";
+			 $divNya .= "</div>";
+	
+			// Working:
+			$divNya .= "<div class='col-md-1 col-xs-12'>";
+			$divNya .= "<div class='form-group'>";
+			$divNya .= "<label for='txtWorkOnBoard'><u>Working:</u></label>";
+			$divNya .= "<input value='".$valDetail[$lan]->working_on_board."' type='text' onkeypress='javascript:return isNumber(event)' class='form-control input-sm' id='txtWorkOnBoard' name='txtWorkOnBoard[]' " . ($disabledExceptUnitAndRequest ? "disabled" : "") . ">";
+			$divNya .= "</div>";
+			$divNya .= "</div>";
+	
+			// Stock:
+			$divNya .= "<div class='col-md-1 col-xs-12'>";
+			$divNya .= "<div class='form-group'>";
+			$divNya .= "<label for='txtStockOnBoard'><u>Stock:</u></label>";
+			$divNya .= "<input value='".$valDetail[$lan]->stocking_on_board."' type='text' onkeypress='javascript:return isNumber(event)' class='form-control input-sm' id='txtStockOnBoard' name='txtStockOnBoard[]' " . ($disabledExceptUnitAndRequest ? "disabled" : "") . ">";
+			$divNya .= "</div>";
+			$divNya .= "</div>";
+	
+			// Request:
+			$divNya .= "<div class='col-md-1 col-xs-12'>";
+			$divNya .= "<div class='form-group'>";
+			$divNya .= "<label for='txtTotalReq'><u>Request:</u></label>";
+			$divNya .= "<input value='".$valDetail[$lan]->request."' type='text' onkeypress='javascript:return isNumber(event)' class='form-control input-sm' id='txtTotalReq' name='txtTotalReq[]'>";
+			$divNya .= "</div>";
+			$divNya .= "</div>";
+	
+			// Mark Reference:
+			$slcA = ($valDetail[$lan]->mark == "A") ? "selected='selected'" : "";
+			$slcB = ($valDetail[$lan]->mark == "B") ? "selected='selected'" : "";
+			$slcC = ($valDetail[$lan]->mark == "C") ? "selected='selected'" : "";
+			$slcD = ($valDetail[$lan]->mark == "D") ? "selected='selected'" : "";
+			$divNya .= "<div class='col-md-2 col-xs-12'>";
+			$divNya .= "<div class='form-group'>";
+			$divNya .= "<label for='slcMarkDetail'><u>Mark Reference:</u></label>";
+			$divNya .= "<select name='slcMarkDetail[]' id='slcMarkDetail' class='form-control input-sm' " . ($disabledExceptUnitAndRequest ? "disabled" : "") . ">";
+			$divNya .= "<option value=''>- Select -</option>";
+			$divNya .= "<option value='A' $slcA>TO BE REPLACE URGENTLY</option>";
+			$divNya .= "<option value='B' $slcB>BETTER TO BE REPLACE</option>";
+			$divNya .= "<option value='C' $slcC>STOCK FOR NEXT O/HAUL</option>";
+			$divNya .= "<option value='D' $slcD>STOCK FOR EMERGENCY</option>";
+			$divNya .= "</select>";
+			$divNya .= "</div>";
+			$divNya .= "</div>";
+	
+			// Remark:
+			$divNya .= "<div class='col-md-2 col-xs-12'>";
+			$divNya .= "<div class='form-group'>";
+			$divNya .= "<label for='txtRemark'><u>Remark:</u></label>";
+			$divNya .= "<textarea name='txtRemark[]' class='form-control input-sm' id='txtRemark' " . ($disabledExceptUnitAndRequest ? "disabled" : "") . ">".$valDetail[$lan]->request_remark."</textarea>";
+			$divNya .= "</div>";
+			$divNya .= "</div>";
+	
+			// Action button
+			$btnActDet = ($lan == 0) ? "<button class='btn btn-primary btn-block btn-sm' title='Add' id='btnAddField' onclick='addRowDetail();' type='button'><i class='glyphicon glyphicon-plus'></i></button>" :
+									   "<button class='btn btn-danger btn-block btn-sm' title='Remove' id='btnRmvField' onclick='removeDetail(\"$idField\", \"".$valDetail[$lan]->id."\");' type='button'><i class='glyphicon glyphicon-minus'></i></button>";
+			$divNya .= "<div class='col-md-1 col-xs-12'>";
+			$divNya .= "<div class='form-group'>";
+			$divNya .= "<label style='font-weight: bold;'>&nbsp;</label>";
+			$divNya .= $btnActDet;
+			$divNya .= "</div>";
+			$divNya .= "</div>";
+	
+			$divNya .= "</div>"; // Close col-md-12
+			$divNya .= "</div>"; // Close row
+	
+			$idField++;
 		}
+	
 		$dataOut['divNya'] = $divNya;
 		$dataOut['idField'] = $idField;
 		return $dataOut;
 	}
+	
+	
 
 	function approveModalReq()
 	{

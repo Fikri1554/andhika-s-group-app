@@ -241,28 +241,22 @@
 			"json"
 			);
 		}
-		function editData(id)
+		function editDataDetail(id)
 		{
 			$("#idLoading").show();
-			$("#lblForm").text("Edit Data");			
-			
-			$.post('<?php echo base_url("request/editData"); ?>',
-			{ id : id, typeEdit : "editReq" },
-				function(data) 
-				{
+			$("#lblForm").text("Edit Data Detail");
+
+			$.post('<?php echo base_url("request/editData"); ?>', { id: id, typeEdit: "editReqDetail" },
+				function(data) {
 					$("#idDataTable").hide();
-					$.each(data, function(i, item)
-					{
-						$("#txtIdEdit").val(item.id);
-						$("#slcVessel").val(item.vessel);
-						$("#txtDateReq").val(item.date_request);
-						$("#txtAppNo").val(item.app_no);
-						$("#txtDept").val(item.department);
-					});
+					$("#idFieldDetail").empty();
+					$("#idFieldDetail").append(data.divNya);
+					$("#txtIdField").val(data.idField);
+					$("#txtIdReq").val(data.idReq);
 					$("#idLoading").hide();
-					$("#idForm").show(200);
+					$("#idFormDetail").show(200);
 				},
-			"json"
+				"json"
 			);
 		}
 		function editDataDetail(id)

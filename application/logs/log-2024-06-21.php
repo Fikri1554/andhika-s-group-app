@@ -1901,3 +1901,600 @@ DEBUG - 2024-06-21 03:43:35 --> Model Class Initialized
 DEBUG - 2024-06-21 03:43:35 --> Model Class Initialized
 DEBUG - 2024-06-21 03:43:35 --> Final output sent to browser
 DEBUG - 2024-06-21 03:43:35 --> Total execution time: 0.0518
+DEBUG - 2024-06-21 05:27:29 --> Config Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Hooks Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 05:27:29 --> URI Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Router Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> No URI present. Default controller set.
+DEBUG - 2024-06-21 05:27:29 --> Output Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Security Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Input Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 05:27:29 --> Language Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Loader Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 05:27:29 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 05:27:29 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 05:27:29 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 05:27:29 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 05:27:29 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Session Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 05:27:29 --> Session routines successfully run
+DEBUG - 2024-06-21 05:27:29 --> cURL Class Initialized
+ERROR - 2024-06-21 05:27:29 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 05:27:29 --> Controller Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Model Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Model Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Session Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Session routines successfully run
+DEBUG - 2024-06-21 05:27:29 --> cURL Class Initialized
+ERROR - 2024-06-21 05:27:29 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 05:27:29 --> Controller Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Model Class Initialized
+DEBUG - 2024-06-21 05:27:29 --> Curl class already loaded. Second attempt ignored.
+DEBUG - 2024-06-21 05:27:29 --> File loaded: application/views/purchasing/login.php
+DEBUG - 2024-06-21 05:27:29 --> Final output sent to browser
+DEBUG - 2024-06-21 05:27:29 --> Total execution time: 0.0722
+DEBUG - 2024-06-21 07:55:26 --> Config Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Hooks Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 07:55:26 --> URI Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Router Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> No URI present. Default controller set.
+DEBUG - 2024-06-21 07:55:26 --> Output Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Security Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Input Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 07:55:26 --> Language Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Loader Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 07:55:26 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 07:55:26 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 07:55:26 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 07:55:26 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 07:55:26 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 07:55:26 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:26 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:26 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:26 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:26 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:26 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:26 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:26 --> Curl class already loaded. Second attempt ignored.
+DEBUG - 2024-06-21 07:55:26 --> File loaded: application/views/purchasing/login.php
+DEBUG - 2024-06-21 07:55:26 --> Final output sent to browser
+DEBUG - 2024-06-21 07:55:26 --> Total execution time: 0.0786
+DEBUG - 2024-06-21 07:55:36 --> Config Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Hooks Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 07:55:36 --> URI Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Router Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Output Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Security Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Input Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 07:55:36 --> Language Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Loader Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 07:55:36 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 07:55:36 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 07:55:36 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 07:55:36 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 07:55:36 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 07:55:36 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:36 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:36 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:36 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:36 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:36 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:36 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Curl class already loaded. Second attempt ignored.
+DEBUG - 2024-06-21 07:55:36 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:36 --> Final output sent to browser
+DEBUG - 2024-06-21 07:55:36 --> Total execution time: 0.0771
+DEBUG - 2024-06-21 07:55:39 --> Config Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Hooks Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 07:55:39 --> URI Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Router Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Output Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Security Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Input Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 07:55:39 --> Language Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Loader Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 07:55:39 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 07:55:39 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 07:55:39 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 07:55:39 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 07:55:39 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 07:55:39 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:39 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:39 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:39 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:39 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:39 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:39 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Curl class already loaded. Second attempt ignored.
+DEBUG - 2024-06-21 07:55:39 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:39 --> Final output sent to browser
+DEBUG - 2024-06-21 07:55:39 --> Total execution time: 0.0698
+DEBUG - 2024-06-21 07:55:44 --> Config Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Hooks Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 07:55:44 --> URI Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Router Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Output Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Security Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Input Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 07:55:44 --> Language Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Loader Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 07:55:44 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 07:55:44 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 07:55:44 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 07:55:44 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 07:55:44 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 07:55:44 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:44 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:44 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:44 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:44 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:44 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:44 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Curl class already loaded. Second attempt ignored.
+DEBUG - 2024-06-21 07:55:44 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:44 --> Final output sent to browser
+DEBUG - 2024-06-21 07:55:44 --> Total execution time: 0.0718
+DEBUG - 2024-06-21 07:55:52 --> Config Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Hooks Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 07:55:52 --> URI Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Router Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Output Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Security Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Input Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 07:55:52 --> Language Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Loader Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 07:55:52 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 07:55:52 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:52 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:52 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:52 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:52 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:52 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:52 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Curl class already loaded. Second attempt ignored.
+DEBUG - 2024-06-21 07:55:52 --> Final output sent to browser
+DEBUG - 2024-06-21 07:55:52 --> Total execution time: 0.0714
+DEBUG - 2024-06-21 07:55:52 --> Config Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Hooks Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 07:55:52 --> URI Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Router Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Output Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Security Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Input Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 07:55:52 --> Language Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Loader Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 07:55:52 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 07:55:52 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:52 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:52 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:52 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:52 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:52 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:52 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:52 --> Curl class already loaded. Second attempt ignored.
+DEBUG - 2024-06-21 07:55:52 --> File loaded: application/views/purchasing/menu.php
+DEBUG - 2024-06-21 07:55:52 --> File loaded: application/views/purchasing/home.php
+DEBUG - 2024-06-21 07:55:52 --> Final output sent to browser
+DEBUG - 2024-06-21 07:55:52 --> Total execution time: 0.0730
+DEBUG - 2024-06-21 07:55:55 --> Config Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Hooks Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 07:55:55 --> URI Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Router Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Output Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Security Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Input Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 07:55:55 --> Language Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Loader Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 07:55:55 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 07:55:55 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 07:55:55 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 07:55:55 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 07:55:55 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Session Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 07:55:55 --> Session routines successfully run
+DEBUG - 2024-06-21 07:55:55 --> cURL Class Initialized
+ERROR - 2024-06-21 07:55:55 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 07:55:55 --> Controller Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Model Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 07:55:55 --> File loaded: application/views/purchasing/menu.php
+DEBUG - 2024-06-21 07:55:55 --> File loaded: application/views/purchasing/request.php
+DEBUG - 2024-06-21 07:55:55 --> Final output sent to browser
+DEBUG - 2024-06-21 07:55:55 --> Total execution time: 0.0676
+DEBUG - 2024-06-21 10:50:53 --> Config Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Hooks Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 10:50:53 --> URI Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Router Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Output Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Security Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Input Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 10:50:53 --> Language Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Loader Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 10:50:53 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 10:50:53 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 10:50:53 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 10:50:53 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 10:50:53 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Session Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 10:50:53 --> Session routines successfully run
+DEBUG - 2024-06-21 10:50:53 --> cURL Class Initialized
+ERROR - 2024-06-21 10:50:53 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 10:50:53 --> Controller Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Model Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Model Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:50:53 --> File loaded: application/views/purchasing/menu.php
+DEBUG - 2024-06-21 10:50:53 --> File loaded: application/views/purchasing/request.php
+DEBUG - 2024-06-21 10:50:53 --> Final output sent to browser
+DEBUG - 2024-06-21 10:50:53 --> Total execution time: 0.0918
+DEBUG - 2024-06-21 10:50:58 --> Config Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Hooks Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 10:50:58 --> URI Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Router Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Output Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Security Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Input Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 10:50:58 --> Language Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Loader Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 10:50:58 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 10:50:58 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 10:50:58 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 10:50:58 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 10:50:58 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Session Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 10:50:58 --> Session routines successfully run
+DEBUG - 2024-06-21 10:50:58 --> cURL Class Initialized
+ERROR - 2024-06-21 10:50:58 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 10:50:58 --> Controller Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Model Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Model Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:50:58 --> File loaded: application/views/purchasing/menu.php
+DEBUG - 2024-06-21 10:50:58 --> File loaded: application/views/purchasing/request.php
+DEBUG - 2024-06-21 10:50:58 --> Final output sent to browser
+DEBUG - 2024-06-21 10:50:58 --> Total execution time: 0.0700
+DEBUG - 2024-06-21 10:51:01 --> Config Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Hooks Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 10:51:01 --> URI Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Router Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Output Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Security Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Input Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 10:51:01 --> Language Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Loader Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 10:51:01 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 10:51:01 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 10:51:01 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 10:51:01 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 10:51:01 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Session Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 10:51:01 --> Session routines successfully run
+DEBUG - 2024-06-21 10:51:01 --> cURL Class Initialized
+ERROR - 2024-06-21 10:51:01 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 10:51:01 --> Controller Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:01 --> File loaded: application/views/purchasing/menu.php
+DEBUG - 2024-06-21 10:51:01 --> File loaded: application/views/purchasing/listRequest.php
+DEBUG - 2024-06-21 10:51:01 --> Final output sent to browser
+DEBUG - 2024-06-21 10:51:01 --> Total execution time: 0.0558
+DEBUG - 2024-06-21 10:51:05 --> Config Class Initialized
+DEBUG - 2024-06-21 10:51:05 --> Hooks Class Initialized
+DEBUG - 2024-06-21 10:51:05 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 10:51:05 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 10:51:05 --> URI Class Initialized
+DEBUG - 2024-06-21 10:51:05 --> Router Class Initialized
+DEBUG - 2024-06-21 10:51:05 --> Output Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Security Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Input Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 10:51:06 --> Language Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Loader Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 10:51:06 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 10:51:06 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 10:51:06 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 10:51:06 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 10:51:06 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Session Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 10:51:06 --> Session routines successfully run
+DEBUG - 2024-06-21 10:51:06 --> cURL Class Initialized
+ERROR - 2024-06-21 10:51:06 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 10:51:06 --> Controller Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:06 --> Final output sent to browser
+DEBUG - 2024-06-21 10:51:06 --> Total execution time: 0.0468
+DEBUG - 2024-06-21 10:51:14 --> Config Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Hooks Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 10:51:14 --> URI Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Router Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Output Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Security Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Input Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 10:51:14 --> Language Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Loader Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 10:51:14 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 10:51:14 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 10:51:14 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 10:51:14 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 10:51:14 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Session Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 10:51:14 --> Session routines successfully run
+DEBUG - 2024-06-21 10:51:14 --> cURL Class Initialized
+ERROR - 2024-06-21 10:51:14 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 10:51:14 --> Controller Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:14 --> Final output sent to browser
+DEBUG - 2024-06-21 10:51:14 --> Total execution time: 0.0643
+DEBUG - 2024-06-21 10:51:15 --> Config Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Hooks Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 10:51:15 --> URI Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Router Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Output Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Security Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Input Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 10:51:15 --> Language Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Loader Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 10:51:15 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 10:51:15 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 10:51:15 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 10:51:15 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 10:51:15 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Session Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 10:51:15 --> Session routines successfully run
+DEBUG - 2024-06-21 10:51:15 --> cURL Class Initialized
+ERROR - 2024-06-21 10:51:15 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 10:51:15 --> Controller Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:15 --> File loaded: application/views/purchasing/menu.php
+DEBUG - 2024-06-21 10:51:15 --> File loaded: application/views/purchasing/listRequest.php
+DEBUG - 2024-06-21 10:51:15 --> Final output sent to browser
+DEBUG - 2024-06-21 10:51:15 --> Total execution time: 0.0580
+DEBUG - 2024-06-21 10:51:16 --> Config Class Initialized
+DEBUG - 2024-06-21 10:51:16 --> Hooks Class Initialized
+DEBUG - 2024-06-21 10:51:16 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 10:51:16 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 10:51:16 --> URI Class Initialized
+DEBUG - 2024-06-21 10:51:16 --> Router Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Output Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Security Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Input Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 10:51:17 --> Language Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Loader Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 10:51:17 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 10:51:17 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 10:51:17 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 10:51:17 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 10:51:17 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Session Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 10:51:17 --> Session routines successfully run
+DEBUG - 2024-06-21 10:51:17 --> cURL Class Initialized
+ERROR - 2024-06-21 10:51:17 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 10:51:17 --> Controller Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Model Class Initialized
+DEBUG - 2024-06-21 10:51:17 --> Final output sent to browser
+DEBUG - 2024-06-21 10:51:17 --> Total execution time: 0.0518
+DEBUG - 2024-06-21 11:07:48 --> Config Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Hooks Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 11:07:48 --> URI Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Router Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Output Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Security Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Input Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 11:07:48 --> Language Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Loader Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 11:07:48 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 11:07:48 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 11:07:48 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 11:07:48 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 11:07:48 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Session Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 11:07:48 --> Session routines successfully run
+DEBUG - 2024-06-21 11:07:48 --> cURL Class Initialized
+ERROR - 2024-06-21 11:07:48 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 11:07:48 --> Controller Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Model Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Model Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 11:07:48 --> File loaded: application/views/purchasing/menu.php
+DEBUG - 2024-06-21 11:07:48 --> File loaded: application/views/purchasing/request.php
+DEBUG - 2024-06-21 11:07:48 --> Final output sent to browser
+DEBUG - 2024-06-21 11:07:48 --> Total execution time: 0.0933
+DEBUG - 2024-06-21 11:08:17 --> Config Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Hooks Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 11:08:17 --> URI Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Router Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Output Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Security Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Input Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 11:08:17 --> Language Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Loader Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 11:08:17 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 11:08:17 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 11:08:17 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 11:08:17 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 11:08:17 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Session Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 11:08:17 --> Session routines successfully run
+DEBUG - 2024-06-21 11:08:17 --> cURL Class Initialized
+ERROR - 2024-06-21 11:08:17 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 11:08:17 --> Controller Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Model Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Model Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 11:08:17 --> Database Driver Class Initialized
+ERROR - 2024-06-21 11:08:18 --> Severity: Notice  --> Undefined offset: 16 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21162
+ERROR - 2024-06-21 11:08:18 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21193
+ERROR - 2024-06-21 11:08:18 --> Severity: Notice  --> Undefined offset: 16 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21162
+ERROR - 2024-06-21 11:08:18 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21193
+ERROR - 2024-06-21 11:08:18 --> Severity: Notice  --> Undefined offset: 16 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21162
+ERROR - 2024-06-21 11:08:18 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21193
+DEBUG - 2024-06-21 11:19:39 --> Config Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Hooks Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Utf8 Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> UTF-8 Support Enabled
+DEBUG - 2024-06-21 11:19:39 --> URI Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Router Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Output Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Security Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Input Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Global POST and COOKIE data sanitized
+DEBUG - 2024-06-21 11:19:39 --> Language Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Loader Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Helper loaded: url_helper
+DEBUG - 2024-06-21 11:19:39 --> Helper loaded: form_helper
+DEBUG - 2024-06-21 11:19:39 --> Helper loaded: language_helper
+DEBUG - 2024-06-21 11:19:39 --> Helper loaded: html_helper
+DEBUG - 2024-06-21 11:19:39 --> Helper loaded: file_helper
+DEBUG - 2024-06-21 11:19:39 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Session Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Helper loaded: string_helper
+DEBUG - 2024-06-21 11:19:39 --> Session routines successfully run
+DEBUG - 2024-06-21 11:19:39 --> cURL Class Initialized
+ERROR - 2024-06-21 11:19:39 --> cURL Class - PHP was not built with cURL enabled. Rebuild PHP with --with-curl to use cURL.
+DEBUG - 2024-06-21 11:19:39 --> Controller Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Model Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Model Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Database Driver Class Initialized
+DEBUG - 2024-06-21 11:19:39 --> Database Driver Class Initialized
+ERROR - 2024-06-21 11:19:39 --> Severity: Notice  --> Undefined offset: 16 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21162
+ERROR - 2024-06-21 11:19:39 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21193
+ERROR - 2024-06-21 11:19:39 --> Severity: Notice  --> Undefined offset: 16 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21162
+ERROR - 2024-06-21 11:19:39 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21193
+ERROR - 2024-06-21 11:19:39 --> Severity: Notice  --> Undefined offset: 16 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21162
+ERROR - 2024-06-21 11:19:39 --> Severity: Notice  --> Undefined offset: 1 C:\xampp\htdocs\purchasing_dev\application\views\purchasing\pdf\mpdf60\mpdf.php 21193

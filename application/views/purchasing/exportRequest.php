@@ -63,10 +63,10 @@ ob_start();
 </body>
 </html>
  
-<?php
-$html = ob_get_contents();
-ob_end_clean();
-$mpdf->WriteHTML(utf8_encode($html));
-$mpdf->Output($nama_dokumen.".pdf" ,'I');
-exit;
-?>
+	<?php
+	$html = ob_get_contents();
+	ob_end_clean();
+	$mpdf->WriteHTML(utf8_encode($html));
+	$mpdf->Output($nama_dokumen.".pdf" ,'I');
+	exit;
+	?>
