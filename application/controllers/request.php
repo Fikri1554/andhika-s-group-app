@@ -68,7 +68,7 @@ class Request extends CI_Controller {
 				$stMaster = "On Progress";
 				$btnAct = "";
 			}else{
-				$btnAct = "<button onclick=\"editData('".$value->id."');\" class=\"btn btn-info btn-xs\" id=\"btnEdit\" type=\"button\"><i class=\"fa fa-edit\"></i> Edit</button>
+				$btnAct .= " <button onclick=\"editData('".$value->id."');\" class=\"btn btn-info btn-xs\" id=\"btnEdit\" type=\"button\"><i class=\"fa fa-edit\"></i> Edit</button>
 							<button onclick=\"delData('".$value->id."')\" class=\"btn btn-danger btn-xs\" id=\"btnDel\" type=\"button\"><i class=\"fa fa-times-circle\"></i> Del</button>";
 			}
 			$cekDetail = $this->cekDetailReq($value->id);
@@ -76,12 +76,10 @@ class Request extends CI_Controller {
 			{
 				$btnDetail = "<button onclick=\"editDataDetail('".$value->id."');\" title=\"Edit Detail\" class=\"btn btn-warning btn-xs\" id=\"btnViewDetail\" type=\"button\" style=\"margin:5px;\"><i class=\"glyphicon glyphicon-edit\"></i></button>";
 				$btnDetail .= "<button onclick=\"modalUploadFile('".$value->id."');\" title=\"Upload File\" class=\"btn btn-success btn-xs\" id=\"btnViewDetail\" type=\"button\" style=\"margin:5px;\"><i class=\"glyphicon glyphicon-open\"></i></button>";
-			}
-			else{
+			}else{
 				$btnDetail = "<button onclick=\"addDetail('".$value->id."');\" title=\"Add Detail\" class=\"btn btn-primary btn-xs\" id=\"btnAdd\" type=\"button\"><i class=\"glyphicon glyphicon-plus\" ></i></button>";
-				
-			}-
-			if($value->chief_check != "0" AND $value->master_check != '0' AND strtolower($usrType) == strtolower("administrator"))
+			}
+			if($value->chief_check != "0" AND $value->master_check != '0')
 			{
 				$btnDetail = "";
 				if(strtolower($usrType) == strtolower("administrator"))
@@ -90,27 +88,31 @@ class Request extends CI_Controller {
 				}
 				$btnAct = " <button onclick=\"showModal('".$value->id."','viewData');\" class=\"btn btn-primary btn-xs\" id=\"btnView\" type=\"button\"><i class=\"fa fa-search\"></i> View</button>";
 				$btnAct .= "<a href=\"".base_url('request/exportDataReq')."/".$value->id."\" class=\"btn btn-success btn-xs\" target=\"_blank\" style=\"margin-left:10px;\"><i class=\"fa fa-download\"></i> Export</a>";
-			}
-			else {
-				if ($cekDetail == "ada") {
-					if ($value->chief_check == "0" AND (strtolower($usrJbtn) == strtolower("C/E") || strtolower($usrJbtn) == strtolower("C/O") || strtolower($usrType) == strtolower("administrator"))) {
-						if ($value->department == "DECK" AND (strtolower($usrJbtn) == strtolower("C/O") || strtolower($usrType) == strtolower("administrator"))) {
+			}else{
+				if($cekDetail == "ada")
+				{
+					if($value->chief_check == "0" AND (strtolower($usrJbtn) == strtolower("C/E") || strtolower($usrJbtn) == strtolower("C/O") || strtolower($usrType) == strtolower("administrator")))
+					{
+						if($value->department == "DECK" AND (strtolower($usrJbtn) == strtolower("C/O") || strtolower($usrType) == strtolower("administrator")))
+						{
 							$btnAct .= " <button onclick=\"showModal('".$value->id."','','chief');\" title=\"Approve Chief\" class=\"btn btn-primary btn-xs\" id=\"btnApproveCo\" type=\"button\"><i class=\"fa fa-hand-o-right\"></i> C/O</button>";
 						}
-						if ($value->department == "ENGINE" AND (strtolower($usrJbtn) == strtolower("C/E") || strtolower($usrType) == strtolower("administrator"))) {
+						if($value->department == "ENGINE" AND (strtolower($usrJbtn) == strtolower("C/E") || strtolower($usrType) == strtolower("administrator")))
+						{
 							$btnAct .= " <button onclick=\"showModal('".$value->id."','','chief');\" title=\"Approve Chief\" class=\"btn btn-primary btn-xs\" id=\"btnApproveCe\" type=\"button\"><i class=\"fa fa-hand-o-right\"></i> C/E</button>";
 						}
+						
 					}
-					if (($value->master_check == "0" AND (strtolower($usrJbtn) == strtolower("MASTER") AND $value->chief_check == "1") || strtolower($usrType) == strtolower("administrator"))) {
+					if(($value->master_check == "0" AND (strtolower($usrJbtn) == strtolower("MASTER") AND $value->chief_check == "1") || strtolower($usrType) == strtolower("administrator")))
+					{
 						$btnAct .= " <button onclick=\"showModal('".$value->id."','','master');\" title=\"Approve Master\" class=\"btn btn-primary btn-xs\" id=\"btnApproveMaster\" type=\"button\"><i class=\"fa fa-hand-o-right\"></i> Master</button>";
 					}
 				}
 			}
-			
 
 			if($value->st_data == '1')
 			{
-				$stMaster = "Complete";
+				$stMaster = "Completed";
 			}
 			if($value->st_data == '2')
 			{
@@ -119,7 +121,7 @@ class Request extends CI_Controller {
 			}
 
 			$stRequired = $this->cekPosisiData($value->id);
-
+			
 			if($value->revise_remark_check != "")
 			{
 				$stMaster = "Revise";
@@ -312,14 +314,14 @@ class Request extends CI_Controller {
 				$valData['working_on_board'] = $arrWork[$lan];
 				$valData['stocking_on_board'] = $arrStock[$lan];
 				$valData['request'] = $arrReq[$lan];
-
+				
 				if($arrMark[$lan] == "-")
 				{
 					$valData['mark'] = "";
 				}else{
 					$valData['mark'] = $arrMark[$lan];
 				}
-
+				
 				if($arrRemark[$lan] != "-")
 				{
 					$valData['request_remark'] = $arrRemark[$lan];
@@ -345,7 +347,7 @@ class Request extends CI_Controller {
 				$valData['working_on_board'] = $arrWork[$hal];
 				$valData['stocking_on_board'] = $arrStock[$hal];
 				$valData['request'] = $arrReq[$hal];
-
+				
 				if($arrMark[$hal] == "-")
 				{
 					$valData['mark'] = "";
@@ -402,9 +404,9 @@ class Request extends CI_Controller {
 		foreach ($valDetail as $key => $val)
 		{
 			$artName = $val->article_name;
-			if($val->request_file != "")
+			if($val->request_file_vessel != "")
 			{
-				$artName = "<a href=\"".base_url('uploadFile')."/".$val->request_file."\" target=\"_blank\">".$artName."</a>";
+				$artName = "<a href=\"".base_url('uploadFile')."/".$val->request_file_vessel."\" target=\"_blank\">".$artName."</a>";
 			}
 			$trNya .= "<tr>";
 				$trNya .= "<td align=\"center\" style=\"font-size:11px;\">".$no."</td>";
@@ -816,8 +818,6 @@ class Request extends CI_Controller {
 		$dataOut['idField'] = $idField;
 		return $dataOut;
 	}
-	
-	
 
 	function approveModalReq()
 	{
@@ -838,7 +838,7 @@ class Request extends CI_Controller {
 			$valData['master_check'] = "1";
 			$valData['id_master'] = $userId;
 			$valData['date_masterCheck'] = $dateNow;
-
+			
 			$valData['revise_date_check'] = "0000-00-00";
 			$valData['revise_userId_check'] = "0";
 			$valData['revise_remark_check'] = "";
@@ -850,12 +850,10 @@ class Request extends CI_Controller {
 			$stData = "Approve Success..!!";
 
 			$this->addDataMyAppLetter($data['id'],$data['typeApprove']);
-
 			if($data['typeApprove'] == 'master')
 			{
 				//$this->sendRemaindByEmail($data['id']);
 			}
-			
 		} catch (Exception $e) {
 			$stData = "Failed =>".$e;
 		}
@@ -930,7 +928,7 @@ class Request extends CI_Controller {
 			$insSqlSrv["addusrdt"] = $usrAddLogin;
 
 			$this->mpurchasing->insDataMyApps($insSqlSrv,"tblEmpNoSurat");
-			//$this->mpurchasing->insDataMyAppsDahlia($insSqlSrv,"tblEmpNoSurat");
+			$this->mpurchasing->insDataMyAppsDahlia($insSqlSrv,"tblEmpNoSurat");
 
 			$imgName = $this->createQRCode($batchno);
 
@@ -1049,16 +1047,8 @@ class Request extends CI_Controller {
 			$mailNya = "ahmad.maulana@andhika.com";
 			$subjectNya = "Request Purchasing From ".$rsl[0]->vessel;
 			$isiEmailNya = $this->getContentSendMail($idReq,$rsl[0]->vessel);
-
-			$valData = array();
-
-			$valData['type_data'] = "Request Purchasing";
-			$valData['subject'] = $subjectNya;
-			$valData['email'] = $mailNya;
-			$valData['isi_body'] = $isiEmailNya;
-
-			$this->mpurchasing->insData("mst_notification",$valData);
-			// mail($mailNya, $subjectNya, $isiEmailNya, $this->headers());
+			
+			mail($mailNya, $subjectNya, $isiEmailNya, $this->headers());
 		}
 	}
 
@@ -1067,7 +1057,7 @@ class Request extends CI_Controller {
 		$headers = "";
 		$headers .= "MIME-Version: 1.0\n";
 		$headers .= "Content-type: text/html; charset=iso-8859-1\n";
-		$headers .= "X-Priority: 3\n";
+		$headers .= "X-Priority: 3\n";-
 		$headers .= "X-MSMail-Priority: Normal\n";
 		$headers .= "X-Mailer: php\n";
 		$headers .= "From: noreply@andhika.com\n";
@@ -1186,16 +1176,16 @@ class Request extends CI_Controller {
 
 		foreach ($rsl as $key => $val)
 		{
-			if($val->request_file == "")
+			if($val->request_file_vessel == "")
 			{
 				$opt .= "<option value=\"".$val->id."\">".$val->code_no." || ".$val->article_name."</option>";
 			}
 			$linkFile = "";
 
-			if($val->request_file != "")
+			if($val->request_file_vessel != "")
 			{
-				$linkFile = "<a href=\"".base_url('uploadFile')."/".$val->request_file."\" target=\"_blank\" class=\"btn btn-info btn-xs btn-block\">View</a>";
-				$linkFile .= "<button onclick=\"delFile('".$idReq."','".$val->id."','".$val->request_file."');\" class=\"btn btn-danger btn-xs btn-block\" title=\"Delete\">Delete</button>";
+				$linkFile = "<a href=\"".base_url('uploadFile')."/".$val->request_file_vessel."\" target=\"_blank\" class=\"btn btn-info btn-xs btn-block\">View</a>";
+				$linkFile .= "<button onclick=\"delFile('".$idReq."','".$val->id."','".$val->request_file_vessel."');\" class=\"btn btn-danger btn-xs btn-block\" title=\"Delete\">Delete</button>";
 			}
 
 			$trNya .= "<tr>";
@@ -1226,10 +1216,10 @@ class Request extends CI_Controller {
 		{
 			$fileUploadNya = "";
 			$fileName = $_FILES["fileUpload"]["name"];
-			$newFileName = "fileReq_".$idDetReq;
+			$newFileName = "fileReqVessel_".$idDetReq;
 			$fileUploadNya = $this->uploadFile($_FILES["fileUpload"]['tmp_name'],$dir,$fileName,$newFileName);
-			$submitData['request_file'] = $fileUploadNya;
-
+			$submitData['request_file_vessel'] = $fileUploadNya;
+			
 			if($fileUploadNya != "")
 			{
 				$whereNya = "id = '".$idDetReq."'";
@@ -1319,21 +1309,80 @@ class Request extends CI_Controller {
 
 		return $statusCek;
 	}
+	
+	function cekPosisiData123($idReq = "")
+	{
+		$statusCek = "";
+
+		$sql = "SELECT * FROM request WHERE sts_delete = '0' AND id = '".$idReq."' ";
+		$rsl = $this->mpurchasing->getDataQuery($sql);
+
+		if(count($rsl) > 0)
+		{
+			if($rsl[0]->chief_check == '0' AND $rsl[0]->master_check == '0' AND $rsl[0]->department == 'DECK')
+			{
+				$statusCek = "Chief Officer";
+			}
+			if($rsl[0]->chief_check == '0' AND $rsl[0]->master_check == '0' AND $rsl[0]->department == 'ENGINE')
+			{
+				$statusCek = "Chief Engineer";
+			}
+			if($rsl[0]->chief_check == '1' AND $rsl[0]->master_check == '0')
+			{
+				$statusCek = "Master";
+			}
+			if($rsl[0]->master_check == '1' AND $rsl[0]->chief_check == '1')
+			{
+				$statusCek = "Superintendent";
+				if($rsl[0]->submit_check == '1' AND $rsl[0]->department == 'DECK' AND $rsl[0]->create_offered == '0')
+				{
+					$statusCek = "Deck PIC";
+				}
+				if($rsl[0]->submit_check == '1' AND $rsl[0]->department == 'ENGINE' AND $rsl[0]->create_offered == '0')
+				{
+					$statusCek = "Engine PIC";
+				}
+				if($rsl[0]->req_check_approve == '1' AND $rsl[0]->submit_offered == '0')
+				{
+					$statusCek = "Purchaser";
+				}
+				if($rsl[0]->submit_offered == '1' AND $rsl[0]->check_approve1 == '0')
+				{
+					$statusCek = "Approval PIC 1";
+				}
+				if($rsl[0]->check_approve1 == '1' AND $rsl[0]->check_approve2 == '0')
+				{
+					$statusCek = "Approval PIC 2";
+				}
+				if($rsl[0]->check_approve1 == '1' AND $rsl[0]->check_approve2 == '1')
+				{
+					$statusCek = "Create PO";
+				}
+			}
+			if($rsl[0]->st_data == '1')
+			{
+				$statusCek = "-";
+			}
+		}
+
+		return $statusCek;
+	}
 
 	function uploadFile($tmpFile = "",$dir = "",$fileName = "",$newFileName = "")
 	{
 		$stUpload = "";
-
+		
 		$dt = explode(".", $fileName);
 		$newFileName = str_replace(array(' ','/','.',',','-'), '', $newFileName).".".trim($dt[count($dt)-1]);
 		// move_uploaded_file($tmpFile, $dir."/".$fileName);
 		// rename($dir."/".$fileName, $dir."/".$newFileName);
-
+		
 		if(move_uploaded_file($tmpFile, $dir."/".$fileName))
 		{
 			rename($dir."/".$fileName, $dir."/".$newFileName);
 			$stUpload = $newFileName;
 		}
+		
 		return $stUpload;
 	}
 
@@ -1348,7 +1397,7 @@ class Request extends CI_Controller {
 		try {
 				unlink($dir."/".$nmFile);
 
-				$valData['request_file'] = "";
+				$valData['request_file_vessel'] = "";
 				$whereNya = "id = '".$idReqDet."'";
 				$this->mpurchasing->updateData($whereNya,$valData,'request_detail');
 				$stData = "Delete Success..!!";
@@ -1406,7 +1455,7 @@ class Request extends CI_Controller {
 		else if($bln == "05" || $bln == "5"){ $bln = "Mei"; }
 		else if($bln == "06" || $bln == "6"){ $bln = "Jun"; }
 		else if($bln == "07" || $bln == "7"){ $bln = "Jul"; }
-		else if($bln == "08" || $bln == "8"){ $bln = "Ags"; }
+		else if($bln == "08" || $bln == "8"){ $bln = "Agus"; }
 		else if($bln == "09" || $bln == "9"){ $bln = "Sep"; }
 		else if($bln == "10"){ $bln = "Okt"; }
 		else if($bln == "11"){ $bln = "Nov"; }
@@ -1429,7 +1478,7 @@ class Request extends CI_Controller {
 		else if($bln == "05" || $bln == "5"){ $bln = "Mei"; }
 		else if($bln == "06" || $bln == "6"){ $bln = "Jun"; }
 		else if($bln == "07" || $bln == "7"){ $bln = "Jul"; }
-		else if($bln == "08" || $bln == "8"){ $bln = "Ags"; }
+		else if($bln == "08" || $bln == "8"){ $bln = "Agus"; }
 		else if($bln == "09" || $bln == "9"){ $bln = "Sep"; }
 		else if($bln == "10"){ $bln = "Okt"; }
 		else if($bln == "11"){ $bln = "Nov"; }

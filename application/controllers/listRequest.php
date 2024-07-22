@@ -254,7 +254,8 @@ class ListRequest extends CI_Controller {
 		$limitNya['listPage'] = $listPage;
 		return $limitNya;
 	}
-	
+
+
 	function addRequestDetail()
 	{
 		$data = $_POST;
@@ -283,6 +284,8 @@ class ListRequest extends CI_Controller {
 
 					if($fileUploadNya == "-")
 					{
+						$valData['request_file'] = 'request_file_vessel';
+						//$sql = "UPDATE request_detail SET request_file = request_file_vessel WHERE id = '72'"
 						$fileUploadNya = "";
 					}else{
 						$fileUploadNya = "";
@@ -319,6 +322,7 @@ class ListRequest extends CI_Controller {
 		}
 		print $stData;
 	}
+
 	
 	function addPurchasingDetail()
 	{
@@ -445,11 +449,11 @@ class ListRequest extends CI_Controller {
 					$artName .= "<br><br>Remark :<br><i style=\"font-size:10px;font-weight:bold;\">" . $val->request_remark . "</i>";
 				}
 
-				if ($val->request_file)
+				if ($val->request_file_vessel)
 				{
 					$linkFile = "<div id=\"idLinkFile_" . $val->id . "\" style=\"float:right;margin:10px;\">
-									<a href=\"" . base_url("/uploadFile") . "/" . $val->request_file . "\" target=\"_blank\" class=\"btn btn-info btn-xs btn-block\">View</a>
-									<button id=\"btnDel\" onclick=\"delFile('" . $val->id . "','" . $val->request_file . "');\" class=\"btn btn-danger btn-xs btn-block\" title=\"Delete\">Del</button>
+									<a href=\"" . base_url("/uploadFile") . "/" . $val->request_file_vessel . "\" target=\"_blank\" class=\"btn btn-info btn-xs btn-block\">View</a>
+									<button id=\"btnDel\" onclick=\"delFile('" . $val->id . "','" . $val->request_file_vessel . "');\" class=\"btn btn-danger btn-xs btn-block\" title=\"Delete\">Del</button>
 								</div>";
 				}
 
@@ -499,9 +503,15 @@ class ListRequest extends CI_Controller {
 					$artName .= "<br><br>Remark :<br><i style=\"font-size:10px;font-weight:bold;\">" . $val->request_remark . "</i>";
 				}
 
+				if ($val->request_file_vessel)
+				{
+					$linkFile .= "<div id=\"idLinkFileReqVeesel_" . $val->id . "\" style=\"float:right;margin:10px;\">
+									<a href=\"" . base_url("/uploadFile") . "/" . $val->request_file_vessel . "\" target=\"_blank\" class=\"btn btn-primary btn-xs btn-block\">File Vessel</a>
+								</div>";
+				}
 				if ($val->request_file)
 				{
-					$linkFile = "<div id=\"idLinkFile_" . $val->id . "\" style=\"float:right;margin:10px;\">
+					$linkFile .= "<div id=\"idLinkFile_" . $val->id . "\" style=\"float:right;margin:10px;\">
 									<a href=\"" . base_url("/uploadFile") . "/" . $val->request_file . "\" target=\"_blank\" class=\"btn btn-info btn-xs btn-block\">View</a>
 									<button id=\"btnDel\" onclick=\"delFile('" . $val->id . "','" . $val->request_file . "');\" class=\"btn btn-danger btn-xs btn-block\" title=\"Delete\">Del</button>
 								</div>";

@@ -965,9 +965,14 @@ class Approve extends CI_Controller {
 		$valDetail = $this->mpurchasing->getData("*","request_detail","id_request = '".$idReq."' AND sts_delete = '0'");
 		foreach ($valDetail as $key => $val)
 		{
+			$article_name = $val->article_name;
+			if($val->request_file)
+			{
+				$article_name = "<a href=\"" . base_url("/uploadFile") . "/" . $val->request_file . "\" target=\"_blank\">".$val->article_name."</a>";
+			}
 			$trNya .= "<tr>";
 				$trNya .= "<td align=\"center\">".$no."</td>";
-				$trNya .= "<td>".$val->article_name."</td>";
+				$trNya .= "<td>".$article_name."</td>";
 				$trNya .= "<td>".$val->code_no."</td>";
 				$trNya .= "<td align=\"center\">".$val->unit."</td>";
 				$trNya .= "<td align=\"center\">".$val->working_on_board."</td>";
