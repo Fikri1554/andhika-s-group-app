@@ -15,6 +15,7 @@ class Offered extends CI_Controller {
 	{
 		$userPosition = $this->session->userdata('userPosition');
 		$userId = $this->session->userdata('idUserPurchase');
+		$userType = $this->session->userdata('userType');
 		$dataOut = array();
 		$trNya = "";
 		$no = 1;
@@ -358,6 +359,88 @@ class Offered extends CI_Controller {
 		print_r($stData);
 	}
 
+	function getDataOfferById() {
+		$dataOut = array();
+		
+		header('Content-Type: application/json'); 
+	
+		if (isset($_POST['idReq'])) {
+			$idReq = $_POST['idReq'];
+			$this->load->model('mpurchasing');
+			
+			$this->db->select('id, code_no, article_name, unit, request, approved_order');
+			$this->db->from('request_detail');
+			$this->db->where('id_request', $idReq);
+			$this->db->where('sts_delete', '0');
+			$this->db->order_by('id', 'ASC');
+			$queryDetail = $this->db->get();
+	
+			if ($queryDetail->num_rows() > 0) {
+				$dataOut['details'] = array();
+				foreach ($queryDetail->result() as $row) {
+					$dataOut['details'][] = array(
+						'id_detReq' => $row->id,
+						'code_no' => $row->code_no,
+						'article_name' => $row->article_name,
+						'unit' => $row->unit,
+						'request' => $row->request,
+						'approved_order' => $row->approved_order
+					);
+				}
+	
+				// Retrieve additional data from request table
+				$this->db->select('app_no, vessel, department');
+				$this->db->from('request');
+				$this->db->where('id', $idReq);  // Use $idReq instead of $requestId
+				$queryRequest = $this->db->get();
+	
+				if ($queryRequest->num_rows() > 0) {
+					$row = $queryRequest->row();
+					$dataOut['additional'] = array(
+						'app_no' => $row->app_no,
+						'vessel' => $row->vessel,
+						'department' => $row->department
+					);
+				} else {
+					$dataOut['additional'] = array('message' => 'No additional data found.');
+				}
+			} else {
+				$dataOut['details'] = array('message' => 'No data found.');
+				$dataOut['additional'] = array('message' => 'Request ID not found.');
+			}
+		} else {
+			$dataOut = array('message' => 'ID request is missing.');
+		}
+		
+		echo json_encode($dataOut);
+	}
+	
+	function updateDataOffer() {
+		$idReq = $this->input->post('idReq');
+		$idReqDets = $this->input->post('txtIdReqDet');  
+		$units = $this->input->post('unit');  
+		$requests = $this->input->post('request');  
+		$approved_orders = $this->input->post('total_approve');  
+		$tableName = "request_detail"; 
+
+		try {
+			foreach ($units as $key => $unit) {
+				$idReqDet = $idReqDets[$key];
+				$request = $requests[$key];
+				$approved_order = $approved_orders[$key];
+				
+				$sqlDetail = "UPDATE $tableName SET unit = ?, request = ?, approved_order = ? WHERE id = ? AND id_request = ? AND sts_delete = '0'";
+				$bindings = array($unit, $request, $approved_order, $idReqDet, $idReq);
+	
+				$this->db->query($sqlDetail, $bindings);
+			}
+			echo json_encode(array('status' => 'success'));
+		} catch (\Throwable $th) {
+			echo json_encode(array('status' => 'error', 'message' => 'Gagal mengupdate data.'));
+		}
+	}
+	
+	
 	function getEdit()
 	{
 		$userPosition = $this->session->userdata('userPosition');

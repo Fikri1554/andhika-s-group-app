@@ -410,9 +410,9 @@
                     }
                     if (response.success) {
                         alert(response.message);
-                        $("#modalOfferDetail").modal('hide'); // Hide the modal on success
-                        $("#row-" + idReq).remove(); // Remove the row from the table
-                        $("#row-" + idReq + " .remark").text(remark); // Update remark in table
+                        $("#modalOfferDetail").modal('hide');
+                        $("#row-" + idReq).remove();
+                        $("#row-" + idReq + " .remark").text(remark);
                     } else {
                         alert("Failed to submit: " + response.message);
                     }
@@ -677,6 +677,159 @@
     function reloadPage() {
         window.location = "<?php echo base_url('offered/getListOffer');?>";
     }
+
+    function getDetailUpdateItem() {
+        var idReq = $("#txtIdReq").val();
+
+        $.post('<?php echo base_url("offered/getDataOfferById"); ?>', {
+                idReq: idReq
+            }, function(response) {
+                console.log("Raw response:", response);
+
+                var data = response;
+
+                $("#detailContainer").empty();
+
+                // Tampilkan data tambahan di atas tabel
+                var additionalContent =
+                    '<div class="row" style="margin-bottom: 15px;">' +
+                    '<div class="col-md-12">' + // Full width for a block layout
+                    '<div class="form-group">' +
+                    '<label><strong>App No:</strong></label>' +
+                    '<p>' + (data.additional.app_no || 'N/A') + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-md-12">' +
+                    '<div class="form-group">' +
+                    '<label><strong>Vessel:</strong></label>' +
+                    '<p>' + (data.additional.vessel || 'N/A') + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '<div class="col-md-12">' +
+                    '<div class="form-group">' +
+                    '<label><strong>Department:</strong></label>' +
+                    '<p>' + (data.additional.department || 'N/A') + '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</div>';
+
+                var tableContent =
+                    '<div class="table-responsive">' +
+                    '<table class="table table-border table-striped table-bordered table-condensed table-advance table-hover">' +
+                    '<thead>' +
+                    '<tr style="background-color: #A70000;color: #FFF;height:40px;">' +
+                    '<th style="vertical-align: middle; width:5%;text-align:center;">No</th>' +
+                    '<th style="vertical-align: middle; width:15%;text-align:center;">Name of Article</th>' +
+                    '<th style="vertical-align: middle; width:10%;text-align:center;">Code / Part No</th>' +
+                    '<th style="vertical-align: middle; width:8%;text-align:center;">Unit</th>' +
+                    '<th style="vertical-align: middle; width:8%;text-align:center;">Request</th>' +
+                    '<th style="vertical-align: middle; width:8%;text-align:center;">Total Approve</th>' +
+                    '</tr>' +
+                    '</thead>' +
+                    '<tbody>';
+
+                if (Array.isArray(data.details) && data.details.length > 0) {
+                    var rowIndex = 1;
+
+                    data.details.forEach(function(item, index) {
+                        tableContent +=
+                            '<tr>' +
+                            '<input type ="hidden" name = "txtIdReqDetHid" value = "' + item.id_detReq + '">' + 
+                            '<td style="vertical-align: middle; text-align:center;">' + (index + 1) +
+                            '</td>' +
+                            '<td style="vertical-align: middle; text-align:center;">' + item.article_name +
+                            '</td>' +
+                            '<td style="vertical-align: middle; text-align:center;">' + item.code_no +
+                            '</td>' +
+                            '<td style="vertical-align: middle; text-align:center;">' +
+                            '<input type="text" class="form-control" name="unit[]" value="' + item.unit +
+                            '">' +
+                            '</td>' +
+                            '<td style="vertical-align: middle; text-align:center;">' +
+                            '<input type="text" class="form-control" name="request[]" value="' + item
+                            .request + '">' +
+                            '</td>' +
+                            '<td style="vertical-align: middle; text-align:center;">' +
+                            '<input type="text" class="form-control" name="total_approve[]" value="' + item
+                            .approved_order + '">' +
+                            '</td>' +
+                            '</tr>';
+                    });
+                    tableContent += '</tbody></table></div>';
+
+                } else {
+                    tableContent +=
+                        '<tr><td colspan="6" style="text-align:center;">No data found.</td></tr>' +
+                        '</tbody></table></div>';
+                }
+
+                $("#detailContainer").append(additionalContent);
+                $("#detailContainer").append(tableContent);
+
+                $("#modalUpdateOfferDetail").modal('show');
+
+            })
+            .fail(function(xhr, status, error) {
+                console.error('AJAX Error:', status, error);
+            });
+    }
+
+    function saveUpdateOffer() {
+        var idReq = $("#txtIdReq").val();
+
+        console.log("ID Request:", idReq);
+
+        var idReqDet = $("input[name^='txtIdReqDet']").map(function() {
+            return $(this).val();
+        }).get();
+
+        var units = $("input[name^='unit']").map(function() {
+            return $(this).val();
+        }).get();
+
+        var requests = $("input[name^='request']").map(function() {
+            return $(this).val();
+        }).get();
+
+        var approvedOrders = $("input[name^='total_approve']").map(function() {
+            return $(this).val();
+        }).get();
+
+        var formData = new FormData();
+        formData.append('idReq', idReq);
+
+        for (var i = 0; i < units.length; i++) {
+            formData.append('txtIdReqDet[]', idReqDet[i]);
+            formData.append('unit[]', units[i]);
+            formData.append('request[]', requests[i]);
+            formData.append('total_approve[]', approvedOrders[i]);
+        }
+
+        $.ajax({
+            url: '<?php echo base_url("offered/updateDataOffer"); ?>',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                console.log("Response:", response);
+                try {
+                    var res = JSON.parse(response);
+                    if (res.status === 'success') {
+                        alert('Data berhasil diupdate.');
+                        reloadPage();
+                    } else {
+                        alert('Gagal mengupdate data: ' + res.message);
+                    }
+                } catch (e) {
+                    alert('Terjadi kesalahan saat memproses respons dari server.');
+                }
+            },
+            error: function() {
+                alert('Terjadi kesalahan saat mengupdate data.');
+            }
+        });
+    }
     </script>
 </head>
 
@@ -753,11 +906,51 @@
                         </div>
                     </div>
                 </div>
-
-
-
                 <div class="form-panel" id="idFormDetail" style="display:none;">
                     <div class="panel-group" id="idQuotation">
+                        <div class="panel panel-danger">
+                            <div class="row">
+                                <div class="col-md-2 col-xs-12">
+                                    <button type="button" class="btn btn-primary btn-xs" style="margin-bottom: 15px;"
+                                        onClick="getDetailUpdateItem()">
+                                        <i class="fa fa-edit"></i> Update
+                                    </button>
+                                    <div class="modal fade bd-example-modal-lg" role="dialog"
+                                        id="modalUpdateOfferDetail">
+                                        <div class="modal-dialog modal-lg">
+                                            <div class="modal-content">
+                                                <div class="modal-header"
+                                                    style="padding: 10px; background-color: #A70000;">
+                                                    <h4 class="modal-title">Update Item Detail</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="col-md-12">
+                                                        <!-- Container for dynamically added rows -->
+                                                        <div id="detailContainer">
+                                                            <!-- Initial row template -->
+                                                            <div class="row detailRow">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style="padding: 5px;" class="modal-footer">
+                                                    <input type="hidden" name="txtId" id="txtId" value="">
+                                                    <button class="btn btn-primary btn-sm" onClick="saveUpdateOffer();"
+                                                        title="Save">
+                                                        <i class="fa fa-check-square-o"></i> Save
+                                                    </button>
+                                                    <button id="btnCancelDetail" class="btn btn-danger btn-sm"
+                                                        name="btnCancel" title="Cancel" data-dismiss="modal">
+                                                        <i class="fa fa-ban"></i> Cancel
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="panel panel-danger">
                             <div class="panel-heading">
                                 <h4 class="panel-title">

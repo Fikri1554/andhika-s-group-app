@@ -170,8 +170,10 @@
                 }
             });
 
-            if (formData.get('codeNo') === "" || formData.get('nameArtikel') === "" || formData.get(
-                    'unit') === "") {
+            // Manual Validation
+            if ($("input[name^='txtCodePartNoModal']").val() === "" ||
+                $("input[name^='txtNameArticleModal']").val() === "" ||
+                $("input[name^='txtUnitModal']").val() === "") {
                 alert("Code / Part No, Name of Article, and Unit cannot be empty!");
                 return false;
             }
@@ -189,12 +191,13 @@
                     editData(idReq);
                     checkReq(idReq);
                     $("#modalEditDetail").modal('hide');
-                    resetForm(); // Membersihkan formulir sebelum mengumpulkan data baru
+                    resetForm(); // Clear the form before gathering new data
                 },
                 dataType: 'json'
             });
         });
     });
+
 
     $(document).ready(function() {
         function updateButtonVisibility() {

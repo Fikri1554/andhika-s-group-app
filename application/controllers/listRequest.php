@@ -285,7 +285,7 @@ class ListRequest extends CI_Controller {
 					if($fileUploadNya == "-")
 					{
 						$valData['request_file'] = 'request_file_vessel';
-						//$sql = "UPDATE request_detail SET request_file = request_file_vessel WHERE id = '72'"
+						
 						$fileUploadNya = "";
 					}else{
 						$fileUploadNya = "";
@@ -323,7 +323,6 @@ class ListRequest extends CI_Controller {
 		print $stData;
 	}
 
-	
 	function addPurchasingDetail()
 	{
 		$data = $this->input->post(); 
@@ -331,7 +330,6 @@ class ListRequest extends CI_Controller {
 		$dateNow = date("Y-m-d");
 		$dir = "./uploadFile";
 		$stData = "";
-
 
 		$arrIdEdit = explode('*', $data['id']);
 		$arrCekFile = isset($_POST['cekFile']) ? explode("*", $_POST['cekFile']) : array();
@@ -438,8 +436,8 @@ class ListRequest extends CI_Controller {
 		{
 			$dataOut['headNya'] = $this->mpurchasing->getData("*", "request", "id = '".$id."' AND sts_delete = '0'");
 			$valDetail = $this->mpurchasing->getData("*", "request_detail", "id_request = '".$id."' AND sts_delete = '0'");
-			$trNya = ""; // Initialize the variable
-			$no = 1; // Initialize the row number
+			$trNya = ""; 
+			$no = 1; 
 			foreach ($valDetail as $key => $val)
 			{
 				$linkFile = "";
@@ -585,8 +583,7 @@ class ListRequest extends CI_Controller {
 		{
 			$stData = "Status : Approved";
 		}
-
-
+		
 		$valDetail = $this->mpurchasing->getData("*","request_detail","id_request = '".$idReq."'");
 		foreach ($valDetail as $key => $val)
 		{
