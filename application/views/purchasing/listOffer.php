@@ -690,10 +690,9 @@
 
                 $("#detailContainer").empty();
 
-                // Tampilkan data tambahan di atas tabel
                 var additionalContent =
                     '<div class="row" style="margin-bottom: 15px;">' +
-                    '<div class="col-md-12">' + // Full width for a block layout
+                    '<div class="col-md-12">' + 
                     '<div class="form-group">' +
                     '<label><strong>App No:</strong></label>' +
                     '<p>' + (data.additional.app_no || 'N/A') + '</p>' +

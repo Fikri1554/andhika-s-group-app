@@ -388,10 +388,9 @@ class Offered extends CI_Controller {
 					);
 				}
 	
-				// Retrieve additional data from request table
 				$this->db->select('app_no, vessel, department');
 				$this->db->from('request');
-				$this->db->where('id', $idReq);  // Use $idReq instead of $requestId
+				$this->db->where('id', $idReq); 
 				$queryRequest = $this->db->get();
 	
 				if ($queryRequest->num_rows() > 0) {
@@ -439,8 +438,7 @@ class Offered extends CI_Controller {
 			echo json_encode(array('status' => 'error', 'message' => 'Gagal mengupdate data.'));
 		}
 	}
-	
-	
+ 	
 	function getEdit()
 	{
 		$userPosition = $this->session->userdata('userPosition');
@@ -1264,18 +1262,5 @@ class Offered extends CI_Controller {
 		return $tgl." ".$bln." ".$thn;
 	}
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
