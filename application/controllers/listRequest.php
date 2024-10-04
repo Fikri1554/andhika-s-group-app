@@ -407,7 +407,7 @@ class ListRequest extends CI_Controller {
 	function delData() {
 		$data = $_POST;
 		$id = $data['id'];
-		$typeDel = $data['typeDel'];
+		$typeDel = $data['typeDel'];	
 		$stData = "";
 	
 		if ($typeDel == "delPur") {
@@ -416,7 +416,7 @@ class ListRequest extends CI_Controller {
 			if ($this->db->update('request_detail', $updateData)) {
 				$stData = "Delete Success..!!";
 			} else {
-				$stData = "Failed =>" . $this->db->error();
+				$stData = "Failed =>" . $this->myapp->error();
 			}
 		}
 		echo json_encode($stData);

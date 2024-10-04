@@ -876,7 +876,6 @@ class Request extends CI_Controller {
 		$chiefName = "";
 
 		try {
-
 			$sql = " SELECT * FROM request WHERE id = '".$idReq."' AND sts_delete = '0' ";
 			$rsl = $this->mpurchasing->getDataQuery($sql);
 
@@ -924,7 +923,7 @@ class Request extends CI_Controller {
 			$insSqlSrv["ket"] = $dept." / ".$vsl." / ".$chiefName;
 			$insSqlSrv["copydoc"] = "0";
 			$insSqlSrv["canceldoc"] = "0";
-			$insSqlSrv["createdby"] = "Purch. System";
+			$insSqlSrv["createdby"] = "Purch. System"; 
 			$insSqlSrv["addusrdt"] = $usrAddLogin;
 
 			$this->mpurchasing->insDataMyApps($insSqlSrv,"tblEmpNoSurat");
@@ -1427,17 +1426,6 @@ class Request extends CI_Controller {
 			} catch (Exception $e) {
 				$stData = "Failed =>".$e;
 			}
-		}
-		else if($typeDel == "delReqDetail")
-		{
-			$idDel = $data['idDel'];
-			try {
-				$this->db->where('id',$idDel);
-  				$this->db->delete('request_detail');
-  				$stData = "Delete Success..!!";
-  			} catch (Exception $e) {
-  				$stData = "Failed =>".$e;
-  			}
 		}		
 		print json_encode($stData);
 	}
