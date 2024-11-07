@@ -654,7 +654,7 @@
                     <div class="row">
                         <div class="col-md-12 col-xs-12">
                             <div class="form-group" align="center">
-                                <input type="hidden" name="txtIdReq" id="txtIdReq" value="">
+                                <input type="hidden" name="txtIdReq" id="   x" value="">
                                 <input type="hidden" name="txtIdField" id="txtIdField" value="1">
                                 <button id="btnSaveDetail" class="btn btn-primary btn-sm" name="btnSave" title="Save">
                                     <i class="fa fa-check-square-o"></i> Save

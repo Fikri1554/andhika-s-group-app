@@ -1112,7 +1112,7 @@ class Request extends CI_Controller {
 
 		return $isiMessage;
 	}
-
+		
 	function getIsiContent($idReq = "")
 	{
 		$dataOut = array();

@@ -646,7 +646,7 @@
                                                             autocomplete="off" required>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-1 col-xs-12">
+                                                <div clas s="col-md-1 col-xs-12">
                                                     <div class="form-group">
                                                         <label for="txtTotalReqModal"
                                                             id="lblForm"><u>Request:</u></label>
