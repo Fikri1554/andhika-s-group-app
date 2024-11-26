@@ -1204,7 +1204,7 @@ class ListRequest extends CI_Controller {
 	}
 
 	function sendRemaindByEmail($idReq = '')
-	{
+	{	
 		$mailNya = "";
 		$subjectNya = "";
 		$isiEmailNya = "";
@@ -1253,7 +1253,7 @@ class ListRequest extends CI_Controller {
 	}
 
 	function getContentSendMail($idReq = "",$vessel = "")
-	{
+	{	
 		$data = $this->getIsiContent($idReq);
 		$isiMessage = "";
 
@@ -1292,7 +1292,7 @@ class ListRequest extends CI_Controller {
 
 		return $isiMessage;
 	}
-
+	
 	function getIsiContent($idReq = "")
 	{
 		$dataOut = array();

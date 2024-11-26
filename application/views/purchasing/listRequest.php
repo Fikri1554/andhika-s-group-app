@@ -170,7 +170,7 @@
                 }
             });
 
-            // Manual Validation
+
             if ($("input[name^='txtCodePartNoModal']").val() === "" ||
                 $("input[name^='txtNameArticleModal']").val() === "" ||
                 $("input[name^='txtUnitModal']").val() === "") {
@@ -242,7 +242,7 @@
                 function(response) {
                     if (response === "Delete Success..!!") {
                         alert("Data berhasil dihapus!");
-                        $("#row_" + id).remove(); // Menghapus baris dari tabel
+                        $("#row_" + id).remove();
                     } else {
                         alert("Gagal menghapus data: " + response);
                     }
